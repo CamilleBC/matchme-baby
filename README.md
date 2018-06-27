@@ -68,6 +68,7 @@ Once logged in, a user can edit his website profile, and add information such as
     - location 
     - ***optionnal*** distance range,
     - select interest (tags)
+
 ### Non-logged user profiles (through logged user)
 - [ ] See other people's profiles except for email address and password(??)
 - [ ] The profile visit should stay in the history of the logged user
@@ -81,10 +82,12 @@ Once logged in, a user can edit his website profile, and add information such as
 - [ ] Ability to block a user. A blocked user:
     - should not appear in searches,
     - should not generate notifications/pop-ups
+
 ### Websocket chat
 - [ ] Ability to chat online in real time if both users are logged and connected (mutual likes)
 - [ ] ***optionnal*** Add a way for the chat to store messages offline with an historic to allow for asynchronous conversations
 - [ ] Notifications for any page of the website if there is a new unreaad message
+
 ### Notifications
 - [ ] A user should be notified in real time (10 seconds delay) for some events.
 - [ ] A user can see unread notifications from any page of the website
