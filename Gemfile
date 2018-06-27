@@ -78,4 +78,4 @@ gem 'devise', '~> 4.4.3'
 
 # File upload in the background
 gem 'carrierwave', '~> 1.2'
-gem 'carrierwave_backgrounder', '~> 0.0.2'
+gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder.git'

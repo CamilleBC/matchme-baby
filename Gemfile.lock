@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/lardawge/carrierwave_backgrounder.git
+  revision: 460394b0e2c0cf0c192be9c1a60bcf9dfb1f9e4d
+  specs:
+    carrierwave_backgrounder (0.4.2)
+      carrierwave (>= 0.5, < 2.0)
+      mime-types (~> 2.99)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,7 +79,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    carrierwave_backgrounder (0.0.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -141,9 +148,7 @@ GEM
     marcel (0.3.2)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types (2.99.3)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
@@ -279,7 +284,7 @@ DEPENDENCIES
   cancancan (~> 2.2.0)
   capybara (>= 2.15, < 4.0)
   carrierwave (~> 1.2)
-  carrierwave_backgrounder (~> 0.0.2)
+  carrierwave_backgrounder!
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.4.3)
