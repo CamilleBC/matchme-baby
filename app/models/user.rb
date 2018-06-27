@@ -1,6 +1,11 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  # mount the uploaders
+  mount_uploader :picture, PictureUploader
+  mount_uploader :video, VideoUploader
 end
