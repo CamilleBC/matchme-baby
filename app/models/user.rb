@@ -5,7 +5,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  # mount the uploaders
+  # Mount the uploaders
   mount_uploader :picture, PictureUploader
   mount_uploader :video, VideoUploader
+  # Use friendly IDs in the URLs as slugs (no break URL, stoupid)
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+  # defining slug candidates if slug is duplicate
+  def slug_candidates
+    [
+      :username,
+      %i[username firstname],
+      %i[username firstname surname]
+    ]
+  end
 end
