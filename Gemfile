@@ -89,3 +89,7 @@ gem 'inherited_resources', ' ~> 1.8.0'
 
 # Scope-based pagination
 gem 'kaminari', '~> 1.1.1'
+
+# CAREFUL! Overrides ActiveRecord delete and destroy!
+# Discards record instead of deleting it.
+gem 'paranoia', '~> 2.4.1'
