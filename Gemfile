@@ -82,3 +82,6 @@ gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_ba
 
 # Routing
 gem 'friendly_id', '~> 5.2.4'
+
+# Default RESTful actions in the controllers
+gem 'inherited_resources', ' ~> 1.8.0'
