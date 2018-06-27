@@ -15,9 +15,9 @@ class User < ApplicationRecord
   # defining slug candidates if slug is duplicate
   def slug_candidates
     [
-      :username,
-      %i[username firstname],
-      %i[username firstname surname]
+      :nickname,
+      %i[nickname firstname],
+      %i[nickname firstname surname]
     ]
   end
 end

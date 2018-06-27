@@ -75,6 +75,7 @@ gem 'twitter-bootstrap-rails', '~> 4.0.0'
 # Authentication, roles and permissions
 gem 'cancancan', '~> 2.2.0'
 gem 'devise', '~> 4.4.3'
+gem 'omniauth-marvin', '~> 1.0.2'
 
 # File upload in the background
 gem 'carrierwave', '~> 1.2'
