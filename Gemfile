@@ -85,3 +85,6 @@ gem 'friendly_id', '~> 5.2.4'
 
 # Default RESTful actions in the controllers
 gem 'inherited_resources', ' ~> 1.8.0'
+
+# Scope-based pagination
+gem 'kaminari', '~> 1.1.1'
