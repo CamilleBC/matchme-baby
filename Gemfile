@@ -68,10 +68,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# HTML and CSS gems
-gem 'haml-rails', '~> 1.0.0'
-gem 'twitter-bootstrap-rails', '~> 4.0.0'
-
 # Authentication, roles and permissions
 gem 'cancancan', '~> 2.2.0'
 gem 'devise', '~> 4.4.3'
@@ -103,3 +99,10 @@ gem 'redis', '~> 4.0.1'
 
 # Background process runner for Ruby
 gem 'sidekiq', '~> 5.1.3'
+
+# HTML and CSS gems
+gem 'haml-rails', '~> 1.0.0'
+gem 'twitter-bootstrap-rails', '~> 4.0.0'
+
+# Form wrapper component
+gem 'simple_form', '~> 4.0.1'
