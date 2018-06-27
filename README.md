@@ -23,10 +23,12 @@ The goal here is to create a match making websites using **Ruby on Rails** and s
 - [ ] A user can receive a password reset mail if forgotten
 - [ ] A user can logout from ANY page
 - [ ] The authentication should use Oauth (from the intranet)
+
 ---------
 ## Website administration
 - [ ] A full rights (or roles/permissions) system for users and admins
 - [ ] Only one table in the database for user/admin
+
 ---------
 ## Logged user profile
 Once logged in, a user can edit his website profile, and add information such as:
@@ -39,11 +41,13 @@ Once logged in, a user can edit his website profile, and add information such as
 - [ ] The user can edit these informations at any time, as well as first name, surname and email address
 - [ ] The user can see who consulted his profile and who liked his account
 - [ ] The user has a public popularity score (freely defined)
+
 ---------
 ## Geolocation
 - [ ] The user can be geolocated to the nearest district
 - [ ] The user can be geolocated even if he hasn't explicetely agreed
 - [ ] The user can manually edit his location on his profile
+
 ---------
 ## User experience
 ### Matching list
@@ -93,6 +97,7 @@ Once logged in, a user can edit his website profile, and add information such as
 - [ ] Profile has been un-liked by a connected user (mutual like)
 - [ ] Profile has been visited by a user
 - [ ] User has received a message
+
 ---------
 ## Matching algortihm
 - [ ] The matching algorithm should take in account
@@ -101,6 +106,7 @@ Once logged in, a user can edit his website profile, and add information such as
     - Number of commun interests (tags)
     - Popularity rating
 - [ ] The matching algorithm should be written in SQL. Active Record is NOT authorized for this feature.
+
 ---------
 ## Search engine
 - [ ] A user search users by selecting criteria such as:
@@ -119,6 +125,7 @@ Once logged in, a user can edit his website profile, and add information such as
     - location,
     - ***optionnal*** distance range,
     - select interest (tags)
+
 ---------
 
 # Bonii ideas
@@ -126,6 +133,7 @@ Once logged in, a user can edit his website profile, and add information such as
 - [ ] Interactive user map (using geolocation)
 - [ ] distance range in the search/match list filters
 - [ ] store chat message with a history when other user is offline to allow asynchronous chat and act as a messaging system
+
 ---------
 
 ## Gems
