@@ -11,6 +11,19 @@ The goal here is to create a match making websites using **Ruby on Rails** and s
 
 ## Features to implement
 
+- [ ] [Authentication](#authentication)
+- [ ] [Website administration](#website-administration)
+- [ ] [Logged user profile](#logged-user-profile)
+- [ ] [Geolocation](#geolocation)
+- [ ] [User experience](#user-experience)
+    - [ ] [Matching list](#matching-list)
+    - [ ] [Non-logged user profiles](#non-logged-user-profiles)
+    - [ ] [Websocket chat](#websocket-chat)
+    - [ ] [Notifications](#notifications)
+- [ ] [Matching algorithm](#matching-algorithm)
+- [ ] [Search engine](#search-engine)
+- [ ] [Bonii ideas](#bonii-ideas)
+
 ---------
 ## Authentication
 - [ ] A user can sign up using at least:
@@ -69,7 +82,8 @@ Once logged in, a user can edit his website profile, and add information such as
     - ***optionnal*** distance range,
     - select interest (tags)
 
-### Non-logged user profiles (through logged user)
+### Non-logged user profiles
+Access is made through logged user.
 - [ ] See other people's profiles except for email address and password(??)
 - [ ] The profile visit should stay in the history of the logged user
 - [ ] Possibility to like a user ONLY if there is at least one picture
@@ -102,7 +116,7 @@ Once logged in, a user can edit his website profile, and add information such as
 - [ ] User has received a message
 
 ---------
-## Matching algortihm
+## Matching algorithm
 - [ ] The matching algorithm should take in account
     - Sexual orientation,
     - Geolocation
