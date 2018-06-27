@@ -53,8 +53,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Add better errors to improve the rails error page
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'better_errors', '~> 2.4.0'
+  gem 'binding_of_caller', '~> 0.8.0'
 end
 
 group :test do
@@ -68,7 +68,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# HTML, CSS and SASS gems
-gem 'bourbon'
-gem 'haml-rails', '>= 1.0.0'
-gem 'twitter-bootstrap-rails', '>= 4.0.0'
+# HTML and CSS gems
+gem 'haml-rails', '~> 1.0.0'
+gem 'twitter-bootstrap-rails', '~> 4.0.0'
+
+# Role and permissions
+gem 'cancancan', '~> 2.2.0'
+gem 'devise', '~> 4.4.3'
