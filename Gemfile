@@ -93,3 +93,7 @@ gem 'kaminari', '~> 1.1.1'
 # CAREFUL! Overrides ActiveRecord delete and destroy!
 # Discards record instead of deleting it.
 gem 'paranoia', '~> 2.4.1'
+
+# Calling github to get the latest updates
+# Wrapper around the ActiveRecord model, to provide search form method helpers
+gem 'ransack', github: 'activerecord-hackery/ransack'
