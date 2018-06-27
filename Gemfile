@@ -100,3 +100,6 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Redis: in-memory database
 gem 'redis', '~> 4.0.1'
+
+# Background process runner for Ruby
+gem 'sidekiq', '~> 5.1.3'
