@@ -43,6 +43,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Add rspecs as rails testing suite
   gem 'rspec-rails', '~> 3.7'
+  # Fake data generator
+  gem 'faker', '~> 1.8.7'
 end
 
 group :development do
@@ -81,12 +83,13 @@ gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_ba
 gem 'friendly_id', '~> 5.2.4'
 
 # Default RESTful actions in the controllers
+# WARNING! Support dropped in CanCanCan >2.0
 gem 'inherited_resources', ' ~> 1.8.0'
 
 # Scope-based pagination
 gem 'kaminari', '~> 1.1.1'
 
-# CAREFUL! Overrides ActiveRecord delete and destroy!
+# WARNING! Overrides ActiveRecord delete and destroy!
 # Discards record instead of deleting it.
 gem 'paranoia', '~> 2.4.1'
 
