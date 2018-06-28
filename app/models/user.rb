@@ -5,6 +5,9 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
+  validates_presence_of :nickname, :firstname, :surname, :email
+  validates_length_of :nickname, within: 2..30
+
   # Calling destroy will set the deleted_at column
   acts_as_paranoid
 
