@@ -17,28 +17,51 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context 'is not valid without a first name' do
+    context 'when has one-letter nickname' do
+      it 'is not valid' do
+        subject.nickname = 'a'
+        is_expected.to_not be_valid
+      end
+    end
+
+    context 'when has same nickname' do
+      let (:copy) { build(:random_user, email: subject.nickname) }
+      it 'is not valid' do
+        copy.save
+        is_expected.to_not be_valid
+      end
+    end
+
+    context 'when has no firstname' do
       it 'is not valid' do
         subject.firstname = ''
         is_expected.to_not be_valid
       end
     end
 
-    context 'is not valid without a surname' do
+    context 'when has no surname' do
       it 'is not valid' do
         subject.surname = ''
         is_expected.to_not be_valid
       end
     end
 
-    context 'is not valid without an email' do
+    context 'when has no email' do
       it 'is not valid' do
         subject.email = ''
         is_expected.to_not be_valid
       end
     end
 
-    context 'is not valid without a password' do
+    context 'when has same email' do
+      let (:copy) { build(:random_user, email: subject.email) }
+      it 'is not valid' do
+        copy.save
+        is_expected.to_not be_valid
+      end
+    end
+
+    context 'when has no password' do
       it 'is not valid' do
         subject.password = ''
         is_expected.to_not be_valid
