@@ -77,8 +77,8 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
-    cancancan (2.2.0)
-    capybara (3.3.0)
+    cancancan (1.17.0)
+    capybara (3.3.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -357,14 +357,14 @@ DEPENDENCIES
   binding_of_caller (~> 0.8.0)
   bootsnap (>= 1.1.0)
   byebug
-  cancancan (~> 2.2.0)
+  cancancan (~> 1.17.0)
   capybara (>= 2.15, < 4.0)
   carrierwave (~> 1.2)
   carrierwave_backgrounder!
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.4.3)
-  factory_bot_rails
+  factory_bot_rails (~> 4.10.0)
   faker (~> 1.8.7)
   friendly_id (~> 5.2.4)
   haml-rails (~> 1.0.0)

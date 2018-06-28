@@ -73,7 +73,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Authentication, roles and permissions
-gem 'cancancan', '~> 2.2.0'
+gem 'cancancan', '~> 1.17.0'
 gem 'devise', '~> 4.4.3'
 gem 'omniauth-marvin', '~> 1.0.2'
 
