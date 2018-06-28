@@ -45,6 +45,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   # Fake data generator
   gem 'faker', '~> 1.8.7'
+  # Factory models generator
+  gem 'factory_bot_rails', '~> 4.10.0'
 end
 
 group :development do
