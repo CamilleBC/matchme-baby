@@ -9,6 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'common/header'
+    = bootstrap_flash
     .container
       - flash.each do |message_type, message|
         .alert{class: "alert-#{message_type}"}

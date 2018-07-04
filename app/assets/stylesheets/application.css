@@ -122,7 +122,31 @@ footer ul li {
 .navbar-inverse .navbar-nav .dropdown-menu > li > a {
   color: #999;
 }
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #222;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #555;
+}
+
 .navbar-inverse .navbar-nav .dropdown-menu > li > a:hover,
 .navbar-custom .navbar-nav .dropdown-menu > li > a:focus {
   color: #777;
+}
+
+.navbar-inverse .navbar-nav .dropdown-menu > .active > a {
+  color: #333 !important;
+  background-color: #f5f5f5 !important;
+}
+
+/* href form submit style */
+.btn-submit {
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
