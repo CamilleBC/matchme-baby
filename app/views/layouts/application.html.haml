@@ -2,10 +2,16 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Matcha
+    %title Match-me, baby!
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render 'common/header'
+    .container
+      - flash.each do |message_type, message|
+        .alert{class: "alert-#{message_type}"}
+          = message.html_safe
     = yield
+    = render 'common/footer'

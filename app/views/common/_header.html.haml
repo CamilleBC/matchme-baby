@@ -1,0 +1,40 @@
+-# %nav{class: 'navbar navbar-fixed-top navbar-expand-lg navbar-inverse'}
+-#   .container
+-#     = link_to 'Match-me, baby!', root_path, class: 'navbar-brand'
+-#     %button{class: 'navbar-toggler'}
+-#       %span{class: 'navbar-toggler-icon'}
+-#     %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#collapsedContent'}, aria: {controls: 'collapsedContent', expanded: 'false', label: 'Toggle navigation'}}
+-#       %span.navbar-toggler-icon
+
+-#     #collapsedContent{class: 'collapse navbar-collapse'}
+-#       .nav.navbar-right
+-#         %ul{class: 'nav navbar-nav'}
+-#           %li.nav-item
+-#             = link_to 'Home', root_path
+-#         %ul{class: 'nav navbar-nav'}
+-#           %li.nav-item
+-#           %li.nav-item{class: 'dropdown'}
+-#             %a{class: 'nav-link dropdown-toggle', href: '#', id: 'navbarDropdown', role: 'button', data: {toggle: 'dropdown'}}
+-#               Menu
+-#             %ul.dropdown-menu
+-#               %li.dropdown-item= link_to 'Action', '#'
+-#               %li.dropdown-item= link_to 'Another action', '#'
+-#               %li.dropdown-divider
+-#               %li.dropdown-item= link_to 'action', '#'
+= nav_bar fixed: :top, brand: 'Match-me, baby!', inverse: true, responsive: true do
+  = menu_group pull: :right do
+    -if user_signed_in?
+      = menu_item 'Home', root_path 
+      = menu_divider
+      = drop_down 'Menu' do
+        = menu_item 'Profile', current_user
+        = drop_down_divider
+        = menu_item 'Log out', destroy_user_session_path
+    - else
+      %li
+        = form_with url: new_user_session_path, class: 'navbar-form' do |f|
+          .form-group.row
+            = f.email_field :email, placeholder: 'Email'
+            = f.password_field :password, placeholder: 'Password'
+            = f.submit "Log in"
+      = menu_item 'Sign up', new_user_registration_path, type: 'submit'

@@ -1,0 +1,35 @@
+= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :email
+  = f.error_span :email
+  = f.input :encrypted_password
+  = f.error_span :encrypted_password
+  = f.input :reset_password_token
+  = f.error_span :reset_password_token
+  = f.input :reset_password_sent_at
+  = f.error_span :reset_password_sent_at
+  = f.input :remember_created_at
+  = f.error_span :remember_created_at
+  = f.input :current_sign_in_at
+  = f.error_span :current_sign_in_at
+  = f.input :last_sign_in_at
+  = f.error_span :last_sign_in_at
+  = f.input :current_sign_in_ip
+  = f.error_span :current_sign_in_ip
+  = f.input :last_sign_in_ip
+  = f.error_span :last_sign_in_ip
+  = f.input :picture
+  = f.error_span :picture
+  = f.input :video
+  = f.error_span :video
+  = f.input :nickname
+  = f.error_span :nickname
+  = f.input :firstname
+  = f.error_span :firstname
+  = f.input :surname
+  = f.error_span :surname
+  = f.input :deleted_at
+  = f.error_span :deleted_at
+  = f.input :slug
+  = f.error_span :slug
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn btn-default'

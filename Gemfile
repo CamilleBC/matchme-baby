@@ -114,3 +114,6 @@ gem 'simple_form', '~> 4.0.1'
 
 # Wrapper for reading metadata and transcoding movies
 gem 'streamio-ffmpeg', '~> 3.0.2'
+
+# Include jQuery for Bootstrap
+gem 'jquery-rails'
