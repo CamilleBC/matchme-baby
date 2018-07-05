@@ -59,6 +59,8 @@ group :development do
   # Add better errors to improve the rails error page
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller', '~> 0.8.0'
+  # Cleaner indentation with Awesome Print
+  gem 'awesome_print'
 end
 
 group :test do

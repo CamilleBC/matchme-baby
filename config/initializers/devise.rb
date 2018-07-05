@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'c7c2022d4bf36523cc94e8bbb6d7cca859676f7d2aebfb41b198fadbb14a0a67f03b21af2f30e647fb8b51f379fcf9c79244cbe7435d797810a0064b3a237691'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -256,7 +256,10 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :marvin,
+                  Rails.application.secrets.marvin_id_api_key,
+                  Rails.application.secrets.marvin_secret_api_key
+  config.secret_key = 'de26d87c49934a963bc409b6e548e84f76ecbac9695850755667c95ab97c5353c788b66a11e7bc1d692e2897cbcb7c4d2f186d225c4aa599ab95c9ee63771aec'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

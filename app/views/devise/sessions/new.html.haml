@@ -8,4 +8,7 @@
     .form-actions
       = f.button :submit, "Log in"
   %br
+  = link_to "Sign in with 42", user_marvin_omniauth_authorize_path
+  %br
+  %br
   = render "devise/shared/links"
