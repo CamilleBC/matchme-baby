@@ -1,0 +1,115 @@
+#sidebar .list-group-item {
+  border-radius: 0;
+  background-color: #222;
+  color: #999;
+  border-left: 0;
+  border-right: 0;
+  border-color: #2c2c2c;
+  white-space: nowrap;
+}
+
+/* panel as flex container */
+#sidebar .list-group .panel {
+  /* display: flex; */
+}
+/* highlight active menu */
+
+#sidebar {
+  height: 100%;
+  min-height: 100%;
+}
+
+#sidebar .list-group {
+  background-color: #222;
+  min-height: 90%;
+  min-width: 70px;
+  overflow-x: scroll;
+}
+
+#sidebar .list-group-item:not(.collapsed) {
+  background-color: #222;
+}
+
+/* closed state */
+#sidebar .list-group .list-group-item[aria-expanded="false"]::after {
+  content: "playlist_add";
+  font-family: "Material Icons";
+  display: inline;
+  text-align: right;
+}
+
+/* open state */
+#sidebar .list-group .list-group-item[aria-expanded="true"] {
+  background-color: #222;
+}
+
+#sidebar .list-group .list-group-item[aria-expanded="true"]::after {
+  content: "keyboard_arrow_down";
+  font-family: "Material Icons";
+  display: inline;
+  text-align: right;
+}
+
+/* >sm and md screens */
+@media (min-width: 62em) {
+  /* level 1*/
+  #sidebar .list-group .collapse .list-group-item {
+    padding-left: 30px;
+  }
+  /* level 2*/
+  #sidebar .list-group .collapse > .collapse .list-group-item {
+    padding-left: 40px;
+  }
+  /* level 3*/
+  #sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 62em) {
+  /* overlay sub levels on small screens */
+  #sidebar .list-group {
+    min-width: 30px;
+  }
+
+  #sidebar .list-group .collapse.in,
+  #sidebar .list-group .collapsing {
+    position: absolute;
+    z-index: 1;
+    width: 190px;
+  }
+  #sidebar .list-group > .list-group-item {
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+  }
+  #sidebar .list-group > .list-group-item > i {
+    font-size: 1.5em;
+  }
+
+  /* hide caret icons of top level when collapsed */
+  #sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
+  #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
+    display: none;
+  }
+}
+
+/* change transition animation to width when entire sidebar is toggled */
+#sidebar.collapse {
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+#sidebar.collapsing {
+  opacity: 0.8;
+  width: 0;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+}

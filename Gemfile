@@ -107,6 +107,7 @@ gem 'sidekiq', '~> 5.1.3'
 
 # HTML and CSS gems
 gem 'haml-rails', '~> 1.0.0'
+gem 'material_icons'
 gem 'twitter-bootstrap-rails', '~> 4.0.0'
 
 # Form wrapper component

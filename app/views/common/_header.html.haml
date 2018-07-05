@@ -1,7 +1,12 @@
 = nav_bar fixed: :top, brand: 'Match-me, baby!', inverse: true, responsive: true do
+  = menu_group pull: :left do
+    %a{"data-toggle": "collapse", href: "#sidebar"}
+      = material_icon.more_horiz.md_36.css_class('md-light d-flex')
   = menu_group pull: :right do
     -if user_signed_in?
       = menu_item 'Home', root_path 
+      = drop_down 'Notifications' do
+        = menu_item 'Placeholder', '#'
       = menu_divider
       = drop_down 'Menu' do
         = menu_item 'Edit profile', edit_user_registration_path
@@ -12,7 +17,7 @@
             class: 'btn btn-danger'}
     - else
       %li{class: 'btn-group d-flex', role: 'group'}
-        = form_with model: @user, url: new_user_session_path, class: 'navbar-form' do |f|
+        = form_with scope: :user, url: new_user_session_path, class: 'navbar-form' do |f|
           .form-group.row
             = f.email_field :email, placeholder: 'Email'
             = f.password_field :password, placeholder: 'Password'

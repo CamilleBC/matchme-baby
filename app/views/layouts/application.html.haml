@@ -10,9 +10,11 @@
   %body
     = render 'common/header'
     = bootstrap_flash
-    .container
-      - flash.each do |message_type, message|
-        .alert{class: "alert-#{message_type}"}
-          = message.html_safe
-    = yield
+    .container-fluid
+      #sidebar.col-md-2.col-xs-1.p-x-0
+        = render 'common/sidebar'
+      %main.col-md-9.col-xs-11.p-l-2.p-t-2.h-100
+        %hr/
+        = yield
+        %hr/
     = render 'common/footer'

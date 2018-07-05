@@ -1,0 +1,22 @@
+.list-group.collapse.in
+  %a.list-group-item.collapsed{'aria-expanded': 'false', data: {parent: '#sidebar', toggle: 'collapse'}, href: '#menu1'}
+    = material_icon.person_outline.md_36
+  #menu1.collapse
+    %a.list-group-item{'aria-expanded': 'false', 'data-toggle': 'collapse', :href => '#menu1sub1'}
+      Media
+    #menu1sub1.collapse
+      %a.list-group-item{'data-parent': '#menu1sub1', href: '#'}
+        Pictures
+      %a.list-group-item{'data-parent': '#menu1sub1', href: '#'}
+        Videos
+    %a.list-group-item{'data-parent': '#menu1', href: '#'}
+      Profile
+  %a.list-group-item.collapsed{'data-parent': '#sidebar', href: '#'}
+    = material_icon.search.md_36
+    %span.hidden-xs.hidden-sm Search User
+  %a.list-group-item.collapsed{'data-parent': '#sidebar', href: '#'}
+    = material_icon.chat.md_36
+    %span.hidden-xs.hidden-sm Messaging
+  %a.list-group-item.collapsed{'data-parent': '#sidebar', href: '#'}
+    = material_icon.people_outline.md_36
+    %span.hidden-xs.hidden-sm Network

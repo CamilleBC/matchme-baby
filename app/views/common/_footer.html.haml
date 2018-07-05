@@ -1,14 +1,6 @@
 %footer{class: "footer"}
-  .container
-    %small
-      %strong
-        %em
-          = link_to 'Match-me, baby!', root_path 
-          , a match-making web-app by 
-          %strong
-            = link_to 'Papa Ours', 'https://github.com/CamilleBC'
-    %nav
-      %ul 
-        %li= link_to 'About', about_path
-        %li= link_to 'Contact', 'mailto:papa_ours@42.fr'
+= nav_bar fixed: :bottom, inverse: true, responsive: true do
+  = menu_group pull: :right do
+    = menu_item 'About', about_path
+    = menu_item 'Contact', 'mailto:papa_ours@42.fr'
         

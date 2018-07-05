@@ -10,22 +10,45 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require material_icons
  *= require_tree .
  *= require_self
  */
 
-/* mixins... */
+/* Size rules for the icons. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
 
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* typography */
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700");
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400, 700);
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400, 700");
 
 * {
   font-family: "Noto Sans";
@@ -63,6 +86,19 @@ p {
 
 /* main style */
 
+body,
+html,
+.container-fluid {
+  height: 100%;
+}
+.contentarea {
+  /* 
+  * replace 160px with the sum of height of all other divs 
+  * inc padding, margins etc 
+  */
+  min-height: calc(100% - 250px);
+}
+
 body {
   padding-top: 60px;
   font-family: "monospace";
@@ -74,45 +110,6 @@ section {
 
 textarea {
   resize: vertical;
-}
-
-/* .center { */
-/*   text-align: center; */
-/* } */
-
-/* .center h1 { */
-/*   margin-bottom: 10px; */
-/* } */
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
 }
 
 /* navbar dropdowns*/
