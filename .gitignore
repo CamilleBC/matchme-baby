@@ -30,4 +30,4 @@
 /config/master.key
 
 # Ignore the dump
-dump.rdb
+./dump.rdb

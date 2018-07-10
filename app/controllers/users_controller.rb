@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = User.all
+    if current_user.admin?
+      @users = User.with_deleted
+    else
+      @users = User.all
+    end
   end
 
   def new
@@ -27,6 +31,16 @@ class UsersController < ApplicationController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
     end
+  end
+
+  def restore
+	User.restore(params[:target])
+	redirect_back(fallback_location: root_url)
+  end
+
+  def destroy
+	@user.destroy
+	redirect_back(fallback_location: root_url)
   end
 
   private

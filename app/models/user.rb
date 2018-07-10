@@ -13,7 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, omniauth_providers: [:marvin]
 
-  # Calling destroy will set the deleted_at column
+ # Calling destroy will set the deleted_at column
   acts_as_paranoid
 
   # Mount the uploaders
