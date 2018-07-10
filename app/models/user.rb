@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   extend FriendlyId
+  include RoleChecker
 
   validates_presence_of :nickname, :firstname, :surname, :email
   validates_uniqueness_of :nickname, :email
@@ -23,10 +24,14 @@ class User < ApplicationRecord
   friendly_id :slug_candidates, use: :slugged
 
   # define the user variable from the OmniAuth provider
+
+  #  CanCan roles as a ruby constant
+  ROLES = %i[admin user].freeze
+
   def self.from_omniauth(auth)
-    puts '****************** AUTH *******************'
-    ap auth
-    puts '*******************************************'
+    # puts '****************** AUTH *******************'
+    # ap auth
+    # puts '*******************************************'
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]

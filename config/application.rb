@@ -19,6 +19,14 @@ module Matcha
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # Load the services files
+    config.autoload_paths += %W[
+      #{config.root}/app/services
+    ]
+    config.eager_load_paths += %W[
+      #{config.root}/app/services
+    ]
+
     # Make ActiveJob use SideKiq
     config.active_job.queue_adapter = :sidekiq
   end

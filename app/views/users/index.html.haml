@@ -1,4 +1,4 @@
-- if @user.nil?
+- if @users.nil?
   NO USER IN THE DATABASE.
 -else
   - model_class = User
@@ -9,21 +9,17 @@
       %tr
         %th= model_class.human_attribute_name(:id)
         %th= model_class.human_attribute_name(:email)
-        %th= model_class.human_attribute_name(:encrypted_password)
-        %th= model_class.human_attribute_name(:reset_password_token)
-        %th= model_class.human_attribute_name(:reset_password_sent_at)
+        %th= model_class.human_attribute_name(:nickname)
+        %th= model_class.human_attribute_name(:firstname)
+        %th= model_class.human_attribute_name(:surname)
+        %th= model_class.human_attribute_name(:slug)
+        %th= model_class.human_attribute_name(:role)
         %th= model_class.human_attribute_name(:remember_created_at)
         %th= model_class.human_attribute_name(:current_sign_in_at)
         %th= model_class.human_attribute_name(:last_sign_in_at)
         %th= model_class.human_attribute_name(:current_sign_in_ip)
         %th= model_class.human_attribute_name(:last_sign_in_ip)
-        %th= model_class.human_attribute_name(:picture)
-        %th= model_class.human_attribute_name(:video)
-        %th= model_class.human_attribute_name(:nickname)
-        %th= model_class.human_attribute_name(:firstname)
-        %th= model_class.human_attribute_name(:surname)
         %th= model_class.human_attribute_name(:deleted_at)
-        %th= model_class.human_attribute_name(:slug)
         %th= model_class.human_attribute_name(:created_at)
         %th=t '.actions', :default => t("helpers.actions")
     %tbody
@@ -31,21 +27,17 @@
         %tr
           %td= link_to user.id, user_path(user)
           %td= user.email
-          %td= user.encrypted_password
-          %td= user.reset_password_token
-          %td= user.reset_password_sent_at
+          %td= user.nickname
+          %td= user.firstname
+          %td= user.surname
+          %td= user.slug
+          %td= user.role
           %td= user.remember_created_at
           %td= user.current_sign_in_at
           %td= user.last_sign_in_at
           %td= user.current_sign_in_ip
           %td= user.last_sign_in_ip
-          %td= user.picture
-          %td= user.video
-          %td= user.nickname
-          %td= user.firstname
-          %td= user.surname
           %td= user.deleted_at
-          %td= user.slug
           %td=l user.created_at
           %td
             = link_to t('.show', :default => t("helpers.links.show")), user_path(user), :class => 'btn btn-default btn-xs'
