@@ -48,6 +48,11 @@ class User < ApplicationRecord
     end
   end
 
+  # Override the devise notification to send mail to the ActiveJob queue
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
   private
 
   # defining slug candidates if slug is duplicate
