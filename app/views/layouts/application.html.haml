@@ -1,18 +1,22 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title Match-me, baby!
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application',
+      media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'common/header'
     = bootstrap_flash
     .container-fluid
       #sidebar.col-md-2.col-xs-1.p-x-0
-        = render 'common/sidebar'
+        - if user_signed_in?
+          = render 'common/sidebar'
+        - else
+          = render 'common/sidebar-login'
       %main.col-md-9.col-xs-11.p-l-2.p-t-2.h-100
         %hr/
         = yield

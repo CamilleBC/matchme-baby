@@ -1,0 +1,15 @@
+.list-group.collapse.in
+  = form_with scope: :user, url: new_user_session_path, class: 'navbar-form' do |f|
+    = f.email_field :email, placeholder: 'Email', class: 'col-md-11 col-xs-1 p-x-0'
+    %br
+    %br
+    = f.password_field :password, placeholder: 'Password', class: 'col-md-11 col-xs-1 p-x-0'
+    %br
+    %br
+    = f.submit "Log in"
+    = link_to 'Sign up', new_user_registration_path, class: 'btn btn-default btn-submit', type: 'button'
+  %a.list-group-item{href: user_marvin_omniauth_authorize_path}
+    Sign in with 42
+  %a.list-group-item{href: new_user_password_path}
+    Forgot your password?
+

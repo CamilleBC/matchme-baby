@@ -7,5 +7,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create; end
+  def create
+    if @user.save
+      puts '********************************'
+      puts 'Saved!'
+      puts '********************************'
+      # Tell the UserMailer to send a welcome email after save
+      UserMailer.with(user: @user).welcome_email.deliver_later
+    end
+  end
 end

@@ -61,6 +61,8 @@ group :development do
   gem 'binding_of_caller', '~> 0.8.0'
   # Cleaner indentation with Awesome Print
   gem 'awesome_print'
+  # Preview mail in browser instead of sending it: useful for testing delivery
+  gem 'letter_opener'
 end
 
 group :test do
