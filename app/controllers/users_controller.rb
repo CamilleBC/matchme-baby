@@ -1,16 +1,14 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: %i[sign_in sign_up]
   before_action :find_user, only: %i[show edit update destroy deactivate reactivate]
   load_and_authorize_resource
 
   def index
-    if current_user.admin?
-      @users = User.with_deleted
-    else
-      @users = User.all
-    end
+    @users = if current_user.admin?
+               User.with_deleted
+             else
+               User.all
+             end
   end
 
   def new
@@ -34,15 +32,15 @@ class UsersController < ApplicationController
   end
 
   def restore
-	User.restore(params[:target])
-	flash.notice = 'User successfully restored'
-	redirect_back(fallback_location: root_url)
+    User.restore(params[:target])
+    flash.notice = 'User successfully restored'
+    redirect_back(fallback_location: root_url)
   end
 
   def destroy
-	@user.destroy
-	flash.notice = 'User successfully destroyed'
-	redirect_back(fallback_location: root_url)
+    @user.destroy
+    flash.notice = 'User successfully destroyed'
+    redirect_back(fallback_location: root_url)
   end
 
   private

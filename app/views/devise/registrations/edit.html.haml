@@ -13,9 +13,15 @@
       = f.input :password_confirmation, required: false
       = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
       .form-group
-        = f.label :pictures, class: 'form-control-label'
+        = f.label 'Add a picture', class: 'form-control-label'
         = f.file_field :pictures, multiple: true, class: 'btn btn-default'
         = f.hidden_field :pictures_cache
+      .form-group
+        - resource.pictures.each_with_index do |picture, index|
+          .form-image-item
+            = image_tag picture.url(:thumb).to_s
+            .form-image-caption
+              = link_to 'Delete picture', user_picture_path(resource, index), method: :delete, data: { confirm: "Are you sure you want to delete this picture?" }
     .form-actions
       = f.button :submit
   %h3 Cancel my account

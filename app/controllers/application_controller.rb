@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
         :provider,
         :uid
       ]
-    ).permit(
+    )
+    devise_parameter_sanitizer.permit(
       :account_update, keys: [
         :nickname,
         :firstname,
