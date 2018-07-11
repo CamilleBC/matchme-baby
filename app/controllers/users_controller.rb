@@ -35,11 +35,13 @@ class UsersController < ApplicationController
 
   def restore
 	User.restore(params[:target])
+	flash.notice = 'User successfully restored'
 	redirect_back(fallback_location: root_url)
   end
 
   def destroy
 	@user.destroy
+	flash.notice = 'User successfully destroyed'
 	redirect_back(fallback_location: root_url)
   end
 

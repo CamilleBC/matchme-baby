@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   extend FriendlyId
   include RoleChecker
@@ -13,17 +11,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, omniauth_providers: [:marvin]
 
- # Calling destroy will set the deleted_at column
+  # Calling destroy will set the deleted_at column
   acts_as_paranoid
 
   # Mount the uploaders
-  mount_uploader :picture, PictureUploader
+  mount_uploader :avatar, PictureUploader
+  mount_uploaders :pictures, PictureUploader
   mount_uploader :video, VideoUploader
 
   # Use friendly IDs in the URLs as slugs (no break URL, stoupid)
   friendly_id :slug_candidates, use: :slugged
-
-  # define the user variable from the OmniAuth provider
 
   #  CanCan roles as a ruby constant
   ROLES = %i[admin user].freeze
@@ -38,6 +35,7 @@ class User < ApplicationRecord
       user.nickname = auth.info.nickname
       user.firstname = auth.extra.raw_info.first_name
       user.surname = auth.extra.raw_info.last_name
+      user.avatar = auth.info.image
     end
   end
 

@@ -3,6 +3,15 @@
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
+  %strong= model_class.human_attribute_name(:avatar) + ':'
+  %br
+  = image_tag @user.avatar_url(:thumb).to_s if @user.avatar?
+%p
+  %strong= model_class.human_attribute_name(:pictures) + ':'
+  %br
+  - @user.pictures.each do |picture|
+    = image_tag picture.url(:thumb).to_s
+%p
   %strong= model_class.human_attribute_name(:email) + ':'
   %br
   = @user.email
@@ -38,10 +47,6 @@
   %strong= model_class.human_attribute_name(:last_sign_in_ip) + ':'
   %br
   = @user.last_sign_in_ip
-%p
-  %strong= model_class.human_attribute_name(:picture) + ':'
-  %br
-  = @user.picture
 %p
   %strong= model_class.human_attribute_name(:video) + ':'
   %br

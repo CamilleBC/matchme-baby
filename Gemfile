@@ -81,9 +81,10 @@ gem 'cancancan', '~> 1.17.0'
 gem 'devise', '~> 4.4.3'
 gem 'omniauth-marvin', '~> 1.0.2'
 
-# File upload in the background
+# File upload in the background, plus image resizer
 gem 'carrierwave', '~> 1.2'
 gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder.git'
+gem "mini_magick"
 
 # Routing
 gem 'friendly_id', '~> 5.2.4'

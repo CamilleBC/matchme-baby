@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   get '/about', to: 'home#about'
 
@@ -9,9 +7,11 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-	  member do
-		  post :restore
-	  end
+    member do
+      post :restore
+    end
+    resources :pictures, only: %i[create destroy]
+    resources :videos, only: %i[create destroy]
   end
 
   root 'home#index'
