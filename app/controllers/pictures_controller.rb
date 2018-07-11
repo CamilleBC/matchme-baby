@@ -5,12 +5,23 @@ class PicturesController < ApplicationController
 
   def create
     flash.alert = 'Failed uploading picture' unless @user.save
+    @user.avatar = @user.pictures[1] if @user.avatar.blank?
     redirect_back(fallback_location: root_url)
   end
 
   def destroy
     delete_image_at_index(params[:id].to_i)
     flash.alert = 'Failed deleting picture' unless @user.save
+    redirect_back(fallback_location: root_url)
+  end
+
+  def avatar
+    @user.avatar = @user.pictures[params[:id].to_i]
+    if @user.save
+      flash.notice = 'Avatar set'
+    else
+      flash.alert = 'Failed setting avatar'
+    end
     redirect_back(fallback_location: root_url)
   end
 

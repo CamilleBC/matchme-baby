@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     member do
       post :restore
     end
-    resources :pictures, only: %i[create destroy]
+    resources :pictures, only: %i[create destroy] do
+      member do
+        post :avatar
+      end
+    end
     resources :videos, only: %i[create destroy]
   end
 
