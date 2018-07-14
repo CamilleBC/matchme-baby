@@ -11,10 +11,10 @@
       = f.input :password, required: true, autofocus: true
       = f.input :password_confirmation, required: true
       -# = f.input :avatar, as: :picture_preview, input_html: {preview_version: :thumb}
-      .form-group
-        = f.label :pictures, class: 'form-control-label'
-        = f.file_field :pictures, multiple: true, class: 'btn btn-default'
-        = f.hidden_field :pictures_cache
+      -# .form-group
+        -# = f.label :pictures, class: 'form-control-label'
+        -# = f.file_field :pictures, multiple: true, class: 'btn btn-default'
+        -# = f.hidden_field :pictures_cache
     %br
     .form-actions
       = f.button :submit, :class => 'btn-primary'

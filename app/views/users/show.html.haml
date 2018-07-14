@@ -2,30 +2,30 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
-%p
-  %strong= model_class.human_attribute_name(:avatar) + ':'
-  %br
-  = image_tag @user.avatar_url(:thumb).to_s if @user.avatar?
-%p
-  %strong= model_class.human_attribute_name(:pictures) + ':'
-  %br
+-# %p
+-#   %strong= model_class.human_attribute_name(:avatar) + ':'
+-#   %br
+-#   = image_tag @user.avatar_url(:thumb).to_s if @user.avatar?
+-# %p
+-#   %strong= model_class.human_attribute_name(:pictures) + ':'
+-#   %br
   - @user.pictures.each do |picture|
     = image_tag picture.url(:thumb).to_s
 
-  - display_hash = { nickname: @user.nickname, 
-    firstname: @user.firstname,
-    surname: @user.surname,
-    email: @user.email,
-    reset_password_token: @user.reset_password_token,
-    reset_password_sent_at: @user.reset_password_sent_at,
-    current_sign_in_at: @user.current_sign_in_at,
-    last_sign_in_at: @user.last_sign_in_at,
-    current_sign_in_ip: @user.current_sign_in_ip,
-    last_sign_in_ip: @user.last_sign_in_ip,
-    deleted_at: @user.deleted_at,
-    slug: @user.slug }
-  - display_hash.each do |key, value|
-    %p
-      %strong= model_class.human_attribute_name(key) + ':'
-      %br
-      = value
+- display_hash = { nickname: @user.nickname, 
+  firstname: @user.firstname,
+  surname: @user.surname,
+  email: @user.email,
+  reset_password_token: @user.reset_password_token,
+  reset_password_sent_at: @user.reset_password_sent_at,
+  current_sign_in_at: @user.current_sign_in_at,
+  last_sign_in_at: @user.last_sign_in_at,
+  current_sign_in_ip: @user.current_sign_in_ip,
+  last_sign_in_ip: @user.last_sign_in_ip,
+  deleted_at: @user.deleted_at,
+  slug: @user.slug }
+- display_hash.each do |key, value|
+  %p
+    %strong= model_class.human_attribute_name(key) + ':'
+    %br
+    = value

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: %i[sign_in sign_up]
-  before_action :find_user, only: %i[show edit update destroy deactivate reactivate]
+  before_action :find_user, only: %i[show edit]
+  before_action :find_target, only: %i[restore destroy]
   load_and_authorize_resource
 
   def index
@@ -11,34 +12,22 @@ class UsersController < ApplicationController
              end
   end
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    if @user.save
-      # Tell the UserMailer to send a welcome email after save
-      UserMailer.with(user: @user).welcome_email.deliver_later
-    end
-  end
-
-  def update
-    # Remove the password key of the params hash if it's blank.
-    # If not, Devise will fail to validate.
-    if params[:user][:password].blank?
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-    end
-  end
+  # def update
+  #   # Remove the password key of the params hash if it's blank.
+  #   # If not, Devise will fail to validate.
+  #   if params[:user][:password].blank?
+  #     params[:user].delete(:password)
+  #     params[:user].delete(:password_confirmation)
+  #   end
+  # end
 
   def restore
-    User.restore(params[:target])
-    flash.notice = 'User successfully restored'
+    flash.notice = 'User successfully restored' if @target.restore
     redirect_back(fallback_location: root_url)
   end
 
   def destroy
-    @user.destroy
+    @target.destroy
     flash.notice = 'User successfully destroyed'
     redirect_back(fallback_location: root_url)
   end
@@ -47,5 +36,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.friendly.find(params[:id])
+  end
+
+  def find_target
+    @target = User.with_deleted.friendly.find(params[:target_id])
   end
 end

@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :nickname, :email
   validates_length_of :nickname, within: 2..30
 
+  has_many :media
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
@@ -13,11 +15,6 @@ class User < ApplicationRecord
 
   # Calling destroy will set the deleted_at column
   acts_as_paranoid
-
-  # Mount the uploaders
-  mount_uploader :avatar, PictureUploader
-  mount_uploaders :pictures, PictureUploader
-  mount_uploader :video, VideoUploader
 
   # Use friendly IDs in the URLs as slugs (no break URL, stoupid)
   friendly_id :slug_candidates, use: :slugged
@@ -47,6 +44,7 @@ class User < ApplicationRecord
         user.email = data[:extra][:raw_info][:email]
         user.firstname = data[:extra][:raw_info][:first_name]
         user.surname = data[:extra][:raw_info][:last_name]
+        user.avatar = data[:info][:image]
       end
     end
   end

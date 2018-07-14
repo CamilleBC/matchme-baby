@@ -1,8 +1,7 @@
-# frozen_string_literal: true
-
 class PictureUploader < CarrierWave::Uploader::Base
   # Include MiniMagick support:
   include CarrierWave::MiniMagick
+  include ::CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
   storage :file
