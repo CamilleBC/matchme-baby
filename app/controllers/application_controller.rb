@@ -11,26 +11,28 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
       :sign_up, keys: [
+        :id,
         :nickname,
         :firstname,
-        :surname,
+       :surname,
         :avatar,
         :avatar_cache,
-        { pictures: [] },
-        :pictures_cache,
         :provider,
-        :uid
+        :uid,
+        media_attributes: %i[
+          medium
+          medium_cache
+          medium_type
+        ]
       ]
     )
     devise_parameter_sanitizer.permit(
-      :account_update, keys: [
-        :nickname,
-        :firstname,
-        :surname,
-        :avatar,
-        :avatar_cache,
-        { pictures: [] },
-        :pictures_cache
+      :account_update, keys: %i[
+        nickname
+        firstname
+        surname
+        avatar
+        avatar_cache
       ]
     )
   end

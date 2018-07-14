@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates_length_of :nickname, within: 2..30
 
   has_many :media
+  accepts_nested_attributes_for :media
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -32,7 +33,7 @@ class User < ApplicationRecord
       user.nickname = auth.info.nickname
       user.firstname = auth.extra.raw_info.first_name
       user.surname = auth.extra.raw_info.last_name
-      user.avatar = auth.info.image
+      # user.avatar = auth.info.image
     end
   end
 
@@ -44,7 +45,7 @@ class User < ApplicationRecord
         user.email = data[:extra][:raw_info][:email]
         user.firstname = data[:extra][:raw_info][:first_name]
         user.surname = data[:extra][:raw_info][:last_name]
-        user.avatar = data[:info][:image]
+        # user.avatar = data[:info][:image]
       end
     end
   end

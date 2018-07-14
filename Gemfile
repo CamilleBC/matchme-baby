@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -84,7 +82,7 @@ gem 'omniauth-marvin', '~> 1.0.2'
 # File upload in the background, plus image resizer
 gem 'carrierwave', '~> 1.2'
 gem 'carrierwave_backgrounder', git: 'https://github.com/lardawge/carrierwave_backgrounder.git'
-gem "mini_magick"
+gem 'mini_magick'
 
 # Routing
 gem 'friendly_id', '~> 5.2.4'

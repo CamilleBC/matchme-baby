@@ -1,4 +1,4 @@
-class PictureUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   # Include MiniMagick support:
   include CarrierWave::MiniMagick
   include ::CarrierWave::Backgrounder::Delay
