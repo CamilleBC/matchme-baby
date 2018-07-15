@@ -6,7 +6,9 @@ class User < ApplicationRecord
   validates_uniqueness_of :nickname, :email
   validates_length_of :nickname, within: 2..30
 
-  has_many :media
+  has_many :media, dependent: :destroy
+  has_one :avatar, class_name: 'Medium', foreign_key: 'avatar_id',
+                   dependent: :destroy
   accepts_nested_attributes_for :media
 
   # Include default devise modules. Others available are:
